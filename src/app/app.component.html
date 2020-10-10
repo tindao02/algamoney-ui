@@ -1,11 +1,57 @@
-<p-tabView>
-  <p-tabPanel header="Header 1">
-     Content 1
-  </p-tabPanel>
-  <p-tabPanel header="Header 2">
-      Content 2
-  </p-tabPanel>
-  <p-tabPanel header="Header 3">
-      Content 3
-  </p-tabPanel>
-</p-tabView>
+<div class="container">
+  <div class="p-grid">
+
+    <div class="p-col-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+    <div class="p-col-12 p-fluid">
+      <label>Descrição: </label>
+      <input type="text" pInputText />
+    </div>
+
+    <div class="p-col-12">
+      <label style="display: block;" >Vencimento: </label>
+      <input type="text" pInputText style="width: 100px;" />
+
+      <label> Até: </label>
+      <input type="text" pInputText style="width: 100px;" />
+    </div>
+
+    <div class="p-col-12">
+      <button pButton pRipple type="submit" label="Pesquisar" class="p-button-raised" ></button>
+    </div>
+
+  </div>
+
+<div class="p-grid">
+  <div class="p-col-12">
+    <p-table [value]="lancamentos" >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Pessoa</th>
+          <th>Descrição</th>
+          <th class="col-data-header" >Vencimento</th>
+          <th class="col-data-header" >Pagamento</th>
+          <th class="col-valor-header" >Valor</th>
+          <th class="col-acoes-header" ></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-lancamento >
+        <tr>
+          <td> {{ lancamento.pessoa }} </td>
+          <td> {{ lancamento.descricao }} </td>
+          <td class="col-data-content" > {{ lancamento.dataVencimento }} </td>
+          <td class="col-data-content" > {{ lancamento.dataPagamento }} </td>
+          <td class="col-valor-content" [ngStyle]="{ color: lancamento.tipo === 'DESPESA' ? 'red' : 'blue' }" > {{ lancamento.valor }} </td>
+          <td class="col-acoes-content">
+            <a pButton icon="pi pi-pencil" class="p-button-raised" pRipple ></a>
+            <button pButton icon="pi pi-trash" class="p-button-raised" pRipple ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+</div>
