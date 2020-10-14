@@ -1,0 +1,22 @@
+<div class="p-shadow-2"  >
+
+  <p-toolbar >
+    <div class="container ma"  >
+      <div class="p-grid">
+        <div class="p-col-12">
+          <a href="#" class="navbar-toggle" (click)="exibirSidebar = true" icon="pi pi-arrow-right" > <i class="pi pi-bars"></i> </a>
+        </div>
+      </div>
+    </div>
+  </p-toolbar>
+
+  <p-sidebar [(visible)]="exibirSidebar" [baseZIndex]="10000" >
+
+    <h2 style="text-transform: uppercase" >administrador</h2>
+
+    <p-tieredMenu [model]="getItems()" [style]="{'width': 'auto', 'border': 'none'}"  ></p-tieredMenu>
+
+  </p-sidebar>
+
+
+</div>

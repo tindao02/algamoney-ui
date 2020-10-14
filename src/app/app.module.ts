@@ -8,10 +8,25 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {TableModule} from 'primeng/table';
+import {TooltipModule} from 'primeng/tooltip';
+import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import {SidebarModule} from 'primeng/sidebar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+import {TieredMenuModule} from 'primeng/tieredmenu';
+import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LancamentosPesquisaComponent,
+    NavbarComponent,
+    PessoasPesquisaComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +34,13 @@ import {TableModule} from 'primeng/table';
     InputTextModule,
     ButtonModule,
     RippleModule,
-    TableModule
+    TableModule,
+    TooltipModule,
+    ToolbarModule,
+    SidebarModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    TieredMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
